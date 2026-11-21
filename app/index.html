@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Leonida Ledger — an offline guide and tracker for all 55 GTA VI trophies on PlayStation 5, with a roadmap to the platinum, missable flags and a spoiler setting.">
+<title>Leonida Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5</p>
+      <h1>Leonida Ledger</h1>
+      <p class="tagline">Every one of the 55 trophies, the road to the platinum, and a checklist that remembers where you are.</p>
+    </div>
+    <div class="progress-card" aria-label="Progress">
+      <p class="progress-big"><span id="progress-earned">0</span><span class="progress-of"> / 55 earned</span></p>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <p class="progress-grades" id="progress-grades">0 platinum &middot; 0 gold &middot; 0 silver &middot; 0 bronze</p>
+      <p class="progress-note">55 trophies: 1 platinum, 2 gold, 6 silver, 46 bronze. No online trophies.</p>
+    </div>
+  </div>
+</header>
+
+<nav class="views" aria-label="Views">
+  <button type="button" id="view-checklist" class="view-btn is-active" data-view="checklist">Checklist</button>
+  <button type="button" id="view-roadmap" class="view-btn" data-view="roadmap">Roadmap to Platinum</button>
+</nav>
+
+<section class="toolbar" aria-label="Filters and tools">
+  <label class="search-box">Search <input id="search" type="search" placeholder="Trophy name or description…" autocomplete="off"></label>
+  <div class="kind-filters" role="group" aria-label="Filter by kind">
+    <button type="button" class="kind-btn is-active" data-kind="all">All <span class="count">55</span></button>
+    <button type="button" class="kind-btn" data-kind="story">Story <span class="count">17</span></button>
+    <button type="button" class="kind-btn" data-kind="missable">Missable <span class="count">13</span></button>
+    <button type="button" class="kind-btn" data-kind="collectible">Collectibles <span class="count">6</span></button>
+    <button type="button" class="kind-btn" data-kind="activity">Activities <span class="count">12</span></button>
+    <button type="button" class="kind-btn" data-kind="online">Online <span class="count">0</span></button>
+  </div>
+  <div class="tool-row">
+    <label class="spoiler-toggle"><input id="spoiler-toggle" type="checkbox" checked> Hide story spoilers until earned</label>
+    <button type="button" id="export-btn">Export progress</button>
+    <label class="import-btn">Import progress <input id="import-file" type="file" accept="application/json,.json"></label>
+    <button type="button" id="reset-btn">Reset</button>
+  </div>
+  <p class="missable-note">Missable means one-chance only if GTA VI has no mission replay — that is not yet confirmed. Finish the flagged missions cleanly the first time.</p>
+</section>
+
+<main class="layout">
+  <section id="checklist-view" class="checklist" aria-label="Trophy checklist">
+    <p class="list-meta" id="list-meta">Showing 55 of 55 trophies</p>
+    <ul id="rows" class="rows"></ul>
+  </section>
+
+  <section id="roadmap-view" class="roadmap" aria-label="Roadmap to the platinum" hidden>
+    <h2>The road to the platinum</h2>
+    <p class="roadmap-intro">Five stages, in order. Finish a stage before the next one — the story and stranger strands first, the long grinds last.</p>
+    <ol id="roadmap-stages" class="stages"></ol>
+  </section>
+
+  <aside id="detail" class="detail" aria-label="Trophy detail" aria-live="polite">
+    <p class="detail-empty">Pick a trophy to read its guide and sources.</p>
+  </aside>
+</main>
+
+<footer class="foot">
+  <p>Names, descriptions and grades are the official PlayStation 5 list, as carried by Exophase and PSNProfiles. Guides are written for this ledger, in its own words, and every guide names its sources. This guide works fully offline — it fetches nothing.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
